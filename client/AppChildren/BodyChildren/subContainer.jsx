@@ -10,22 +10,15 @@ function SubContainer(props){
 
   let foodRows = [];
   let priceRows = [];
-  foodsList.forEach((food, index)=>{
-      foodRows.push(
-        <tr className="row" key={index}>
-          <td className="row">{food}</td>
-        </tr>  
-    )
-  })
-  priceList.forEach((price, index)=>{
-    priceRows.push(
-      <tr className="row" key={index}>
-        <td className="row">{price}</td>
-      </tr>
-    )
-  })
-  
 
+  foodsList.forEach((food, index) =>{
+    foodRows.push(
+<tr className="row" key={index}>
+  <td className="row">{food}</td>
+  <td className="row">{priceList[index]}</td>
+</tr>
+    )
+  })
 
     
   return (
@@ -38,7 +31,6 @@ function SubContainer(props){
               <th className="col">Prices</th>
            </tr>
             {foodRows}
-            {priceRows}
           </tbody>
         </table>
         <h3>Total Cost: ${storeSubtotal}</h3>
