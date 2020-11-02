@@ -4,7 +4,6 @@ import { render } from 'react-dom'
 class Cost extends Component {
   constructor(props){
     super(props)
-
   }
 
   render(){

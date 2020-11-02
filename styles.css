@@ -56,16 +56,16 @@
   width: 40px;
   height: 40px;
   /* puts plus in right place */
-  line-height: 36px;
+  line-height:50%;
   border-radius: 50%;
   border: solid 2px #bcc2cf;
   text-align: center;
-  margin-right: 5px;
-  margin-left: 5px;
+  margin-right: 5px; 
+  margin-left: 5px; 
   vertical-align: middle;
-  overflow: hidden;
+ overflow: hidden; 
   font-weight: bold;
-  transition: .4s;
+   transition: .4s;
 }
 
 .btn:hover {
@@ -88,6 +88,7 @@ input {
   padding:10px;
   border-radius:10px;
   border:0;
+  /* line-height: 30px; */
   color: white;
   /* box-shadow:0 0 15px 4px rgba(0,0,0,0.06); */
 }
