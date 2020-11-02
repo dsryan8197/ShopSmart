@@ -1,20 +1,20 @@
-import React, { Component } from 'react'
-import Overall from './FooterChildren/Overall.jsx'
-import Cost from './FooterChildren/Cost.jsx'
-import { render } from 'react-dom'
+import React, { Component } from 'react';
+import { render } from 'react-dom';
+import Overall from './FooterChildren/Overall.jsx';
+import Cost from './FooterChildren/Cost.jsx';
 
 class Footer extends Component {
-  constructor(props){
-    super(props)
+  constructor(props) {
+    super(props);
   }
 
-  render(){
+  render() {
     return (
       <div className="footing">
         <Cost />
         <Overall />
       </div>
-    )
+    );
   }
 }
-export default Footer
+export default Footer;
