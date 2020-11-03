@@ -4,7 +4,8 @@ import SubContainer from './subContainer.jsx';
 
 class Container extends Component {
   constructor(props) {
-    super(props);
+    super(
+      props);
   }
 
   render() {

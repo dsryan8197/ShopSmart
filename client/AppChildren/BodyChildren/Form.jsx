@@ -25,9 +25,9 @@ class Form extends Component {
       ralphsSelected: false,
       foodsList: [],
       priceList: {
-        wholeFoods: [],
-        traderJoes: [],
-        ralphs: [],
+        wholeFoods: [1],
+        traderJoes: [1],
+        ralphs: [1],
       },
       wholeFoodsSubtotal: 0,
       traderJoesSubtotal: 0,
@@ -80,7 +80,7 @@ class Form extends Component {
       };
     });
   }
-    // )}
+    )}
 //for changing button
 
   // pushes captured food key into array of foodsList
@@ -91,21 +91,23 @@ class Form extends Component {
     let ralphs;
     query(this.state.food, 'tj').then((result) => {
       tj = result.data;
-      this.state.priceList.traderJoes.push(tj);
+      console.log('result.data', tj);
     });
     query(this.state.food, 'wf').then((result) => {
       wf = result.data;
-      this.state.priceList.wholeFoods.push(wf);
+      console.log('result.data', wf);
     });
     query(this.state.food, 'ralphs').then((result) => {
       ralphs = result.data;
-      this.state.priceList.ralphs.push(ralphs);
+      console.log('result.data', ralphs);
     });
-    console.log(this.state.priceList);
     this.setState((prevState) => {
       return {
         ...prevState,
         foodsList: this.state.foodsList.concat(this.state.food),
+        priceList: this.state.priceList.wholeFoods.concat(wf),
+        priceList: this.state.priceList.traderJoes.concat(tj),
+        priceList: this.state.priceList.ralphs.concat(ralphs),
       };
     });
   }

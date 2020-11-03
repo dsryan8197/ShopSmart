@@ -15,10 +15,11 @@ function SubContainer(props){
     foodRows.push(
 <tr className="row" key={index}>
   <td className="row">{food}</td>
-  <td className="row">{priceList[index]}</td>
+  <td className="col">{priceList[index]}</td>
 </tr>
     )
   })
+
 
     
   return (
