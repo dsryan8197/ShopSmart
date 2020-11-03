@@ -24,17 +24,17 @@ class Form extends Component {
       traderJoesSelected: false,
       ralphsSelected: false,
       foodsList: [],
-      priceList: {
-        wholeFoods: [1],
-        traderJoes: [1],
-        ralphs: [1],
-      },
+      wholeFoodsList: [],
+      traderJoesList: [],
+      ralphsList: [],
       wholeFoodsSubtotal: 0,
       traderJoesSubtotal: 0,
       ralphsSubtotal: 0,
       food: '',
       maxBudget: 0,
-      outline: 'none',
+      wholeFoodsData: '',
+      traderJoesData: '',
+      ralphsData: '',
     };
     this.storeClick = this.storeClick.bind(this);
     this.onFoodInput = this.onFoodInput.bind(this);
@@ -69,6 +69,7 @@ class Form extends Component {
         food: e.target.value,
       };
     });
+    console.log('State.food', this.state.food);
   }
 
   // captures food input in food key
@@ -86,29 +87,29 @@ class Form extends Component {
   // pushes captured food key into array of foodsList
   onSubmit(e) {
     e.preventDefault();
-    let tj;
-    let wf;
-    let ralphs;
+    const newFoodsList = [...this.state.foodsList, this.state.food];
+    const newWholeFoodsList = [...this.state.wholeFoodsList];
+    const newRalphsList = [...this.state.ralphsList];
+    const newTraderJoesList = [...this.state.traderJoesList];
+
     query(this.state.food, 'tj').then((result) => {
-      tj = result.data;
-      console.log('result.data', tj);
+      newTraderJoesList.push(result.data);
+      this.setState({
+        foodsList: newFoodsList,
+        traderJoesList: newTraderJoesList,
+      });
     });
     query(this.state.food, 'wf').then((result) => {
-      wf = result.data;
-      console.log('result.data', wf);
+      newWholeFoodsList.push(result.data);
+      this.setState({
+        wholeFoodsList: newWholeFoodsList,
+      });
     });
     query(this.state.food, 'ralphs').then((result) => {
-      ralphs = result.data;
-      console.log('result.data', ralphs);
-    });
-    this.setState((prevState) => {
-      return {
-        ...prevState,
-        foodsList: this.state.foodsList.concat(this.state.food),
-        priceList: this.state.priceList.wholeFoods.concat(wf),
-        priceList: this.state.priceList.traderJoes.concat(tj),
-        priceList: this.state.priceList.ralphs.concat(ralphs),
-      };
+      newRalphsList.push(result.data);
+      this.setState({
+        ralphsList: newRalphsList,
+      });
     });
   }
 
@@ -167,6 +168,6 @@ class Form extends Component {
       </div>
     );
   }
-}
+
 
 export default Form;

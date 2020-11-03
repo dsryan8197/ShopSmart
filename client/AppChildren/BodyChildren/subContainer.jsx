@@ -1,42 +1,53 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
-import { render } from 'react-dom'
+import { render } from 'react-dom';
 
-function SubContainer(props){
+function SubContainer(props) {
   const storeName = props.props.marketName;
-  const storeSubtotal = props.props.priceList.reduce((a,b)=> a+b, 0)
-  const foodsList = props.props.props.foodsList
-  const priceList = props.props.priceList
+  const { maxBudget } = props.props.props;
+  const { foodsList } = props.props.props;
+  const { priceList } = props.props;
+  const storeSubtotal = priceList.reduce((a, b) => a + b, 0);
 
-  let foodRows = [];
-  let priceRows = [];
+  console.log('budget', maxBudget);
 
-  foodsList.forEach((food, index) =>{
+  const foodRows = [];
+  foodsList.forEach((food, index) => {
     foodRows.push(
-<tr className="row" key={index}>
-  <td className="row">{food}</td>
-  <td className="col">{priceList[index]}</td>
-</tr>
-    )
-  })
+      <tr className="row" key={index}>
+        <td className="row" id="foodBox">
+          {food}
+        </td>
+        <td className="row" id="priceBox">
+          {priceList[index]}
+        </td>
+      </tr>
+    );
+  });
 
-
-    
   return (
     <div>
-    <h3 className="shop">{storeName}</h3>
-        <table className="paper">
-          <tbody>
-            <tr>
-              <th className="col">Food</th>
-              <th className="col">Prices</th>
-           </tr>
-            {foodRows}
-          </tbody>
-        </table>
-        <h3>Total Cost: ${storeSubtotal}</h3>
+      <h3 className="shop">{storeName}</h3>
+      <table className="paper">
+        <tbody>
+          <tr>
+            <th className="col">Food</th>
+            <th className="col">Prices</th>
+          </tr>
+          {foodRows}
+        </tbody>
+      </table>
+
+      <h3
+        style={{ color: storeSubtotal > maxBudget && maxBudget > 0 ? 'red' : 'white' }}
+        id="total"
+      >
+        Total Cost: $ 
+{' '}
+{storeSubtotal}
+      </h3>
     </div>
-    )
-  }
-    
+  );
+}
+
 export default SubContainer;

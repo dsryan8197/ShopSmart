@@ -2,12 +2,19 @@ import React, { Component } from 'react';
 import { render } from 'react-dom';
 
 function Overall(props) {
-  const { priceList, traderJoesSelected, wholeFoodsSelected, ralphsSelected } = props.props;
+  const {
+    traderJoesList,
+    ralphsList,
+    wholeFoodsList,
+    traderJoesSelected,
+    wholeFoodsSelected,
+    ralphsSelected,
+  } = props.props;
 
   const checkedPriceList = {};
-  if (traderJoesSelected) checkedPriceList['Trader Joes'] = priceList.traderJoes;
-  if (wholeFoodsSelected) checkedPriceList['Whole Foods'] = priceList.wholeFoods;
-  if (ralphsSelected) checkedPriceList.Ralphs = priceList.ralphs;
+  if (traderJoesSelected) checkedPriceList['Trader Joes'] = traderJoesList;
+  if (wholeFoodsSelected) checkedPriceList['Whole Foods'] = wholeFoodsList;
+  if (ralphsSelected) checkedPriceList.Ralphs = ralphsList;
 
   // find best average price
   const averages = {};

@@ -155,10 +155,15 @@ margin-left: 30px;
 th {
     border: 1px solid rgb(190, 190, 190);
     padding: 10px;
+  font-size: 20px;
 }
 
 td {
     text-align: center;
+    background-color: #d7d9f286;
+    color:  #2d2f31;
+    text-shadow: none;
+      
 }
 
 th[class="col"] {
@@ -166,8 +171,17 @@ th[class="col"] {
     color: #fff;
 }
 
-th[class="row"] {
-    background-color: #d7d9f286;
+tr[class="row"] {
+    background-color:#d7d9f286;
+    /* color:  #2d2f31; */
+    color: black !important;
+    font-weight: bold !important;
+    text-shadow: none !important;
+    font-size: 20px !important;
+}
+
+#priceBox {
+  background:  #999ee977;
 }
 
 .marketsDisplay{
