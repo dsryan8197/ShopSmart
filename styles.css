@@ -1,41 +1,48 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
-
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
 
+/* Welcome to ShopSmart */
 .opener {
   font-size: 60px;
   display: flex;
   justify-content: center;
   margin-top: 300px;
 }
-
+/*Sign in to Review Shopping List*/
 .open {
   display: flex;
   margin-top: 20px;
   justify-content: center;
-  height: 100px;
+  height: 50px;
 }
+
+/* main ShopSmart logo */
+.shopSmartLogo{
+  display: flex;
+  justify-content: center;
+  height: 400px;
+}
+
+/*Continue as Guest Button */
 .atag {
   text-decoration: none;
   color: black;
-
 }
 
+/*Second Shop Smarter Title*/
 .intro {
-  /* font-size: 60px; */
   display: flex;
   justify-content: center;
-  /* margin-top: 300px; */
 }
 
+/*Continue as Guest and Sign In button*/
 .gotomiddle {
   padding:10px;
   border-radius:10px;
   width: 130px;
   margin: 5px;
-  /* padding: 50px; */
   height: 50px;
   border:0;
   box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
@@ -43,9 +50,11 @@
   font-weight: bold;
   margin-bottom: 600px;
 }
+
 .gotomiddle:hover {
   background-color: grey;
 }
+
 /* plus button */
 .btn{
   display: inline-block;
@@ -93,11 +102,13 @@ input {
   /* box-shadow:0 0 15px 4px rgba(0,0,0,0.06); */
 }
 
+/* Food Item and Max Budget*/
 .field{
   background-color: transparent;
   border: 1px solid white;
   font-family: 'Montserrat', sans-serif;
 }
+
 /* lets see button */
 .lets {
   padding:10px;
@@ -112,7 +123,7 @@ input {
   background-color: grey;
 }
 
-/* header  */
+/* Div that holds top shop smart logo*/
 .header {
   display: flex;
   margin-top: 20px;
@@ -122,18 +133,14 @@ input {
   height: 100px;
 }
 
-
-/* input fields */
+/* Store Button Selection */
 .TopInput {
   display: flex;
   margin-top: 20px;
   justify-content: center;  
 }
 
-.check{ 
-  margin-left: 19px;
-}
-
+/* Div that holds food search, and budget*/
 .BottomInputs {
   display: flex;
   flex-direction: row;
@@ -142,8 +149,10 @@ input {
   margin-bottom: 50px;
 }
 
+/* Input field placement*/
+
 #inputs {
-margin-right: 30px;;
+margin-right: 30px;
 }
 
 .budget {
@@ -151,7 +160,7 @@ margin-left: 30px;
 }
 
 
-/* table  */
+/* Food list tables - did in a hurry so some of the styling is probably redundant*/
 th {
     border: 1px solid rgb(190, 190, 190);
     padding: 10px;
@@ -202,13 +211,14 @@ table {
      font-size: .8rem;
 }
 
-/* footer */
+/* footer - Only have time for one trip */
 
 .oneShop {
 margin-top: 150px;
 font-size: 15px;
 }
 
+/* Total Cost*/
 #total {
   margin-top: 45px;
   display: flex;
@@ -216,31 +226,25 @@ font-size: 15px;
   font-family: 'Montserrat', sans-serif;
 }
 
-
-
+/* Shop Smarter Test */
 .title {
   font-size: 70px;
   height: 50px;
 }
 
+/* Entire div for overall.jsx */
 .foot {
   display: block;
 text-align: center;
-
 } 
 
-
+/* three store logos */
 .logos {
   width:70px;
   height: 70px;
 }
 
-.logos[type=]:active {
-  outline: 2px solid orange;
-  border: 1px solid gray;
-}
-
-
+/* shopping list styling */
 .paper {
   background: #fff;
   /* display: inline-block; */
