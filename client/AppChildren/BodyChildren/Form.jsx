@@ -81,7 +81,7 @@ class Form extends Component {
       };
     });
   }
-    )}
+  
 //for changing button
 
   // pushes captured food key into array of foodsList
@@ -112,7 +112,7 @@ class Form extends Component {
       });
     });
   }
-
+[]
   render() {
     return (
       <div>
@@ -168,6 +168,6 @@ class Form extends Component {
       </div>
     );
   }
-
+}
 
 export default Form;
